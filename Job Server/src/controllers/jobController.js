@@ -52,9 +52,38 @@ async function addJobsAPI(req, res) {
     }
 }
 
+async function editJobsAPI(req, res) {
+    const pid = req.body.id;
+    const updateData = req.body;
+     console.log("vanshtrivedi land")
+     console.log(req.body)
+     console.log("value"+pid)
+    try {
+        // Update the job using the id and the rest of the request body
+        const result = await jobListingData.findByIdAndUpdate(
+            {_id : pid},
+            { $set: updateData },
+            { new: true, useFindAndModify: false }
+        );
+
+        if (!result) {
+            return res.status(404).json({ message: 'Job not found' });
+        }
+
+        res.json({ done: true, job: result });
+    } catch (err) {
+        console.error('Error updating job:', err);
+        res.status(500).send('Server Error');
+    }
+}
+
+
+
+
 module.exports = {
     getJobsAPI,
     deleteJobsAPI,
     addJobsAPI,
-    getJobDetailAPI
+    getJobDetailAPI,
+    editJobsAPI
 };
