@@ -54,10 +54,7 @@ async function addJobsAPI(req, res) {
 
 async function editJobsAPI(req, res) {
     const pid = req.body.id;
-    const updateData = req.body;
-     console.log("vanshtrivedi land")
-     console.log(req.body)
-     console.log("value"+pid)
+    const updateData = req.body;     
     try {
         // Update the job using the id and the rest of the request body
         const result = await jobListingData.findByIdAndUpdate(

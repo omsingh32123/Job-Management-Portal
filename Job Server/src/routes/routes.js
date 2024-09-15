@@ -4,9 +4,8 @@ const { getJobsAPI, deleteJobsAPI, addJobsAPI, getJobDetailAPI,editJobsAPI} = re
 
 router.get('/get-jobs', getJobsAPI);
 router.get('/get-job-detail', getJobDetailAPI);
-// router.delete('/delete-jobs', deleteJobsAPI);
 router.post('/add-jobs', addJobsAPI);
-// router.patch('/edit-jobs', editJobsAPI);
 router.delete('/delete-jobs',deleteJobsAPI)
-router.put('/edit-jobs',editJobsAPI)
+router.put('/edit-jobs',editJobsAPI);
+
 module.exports = router ;

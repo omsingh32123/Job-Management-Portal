@@ -1,0 +1,5 @@
+.description-container {
+    word-break: break-word; /* Breaks long words onto the next line */
+    overflow-wrap: break-word; /* Wraps long words within the container */
+    hyphens: auto; /* Optional: adds hyphenation to broken words */
+  }
